@@ -15,7 +15,7 @@ def are_overlap(x1,x2,x3,x4):
         x3, x4 = swap(x3,x4)
 # checking if one line's either of the two coordinates lie(s) between the coordinates of the other line
 # this assumes x1>=x2 and x4>=x3 because of the swapping
-    return ((x1<=x3 and x2>=x3) or (x1<=x4 and x2>=x4) or (x3<=x2 and x4>=x2) or (x3<=x2 and x4>=x2))
+    return (x2>=x3) and (x4>=x1)
 
 if __name__ == '__main__':
 
