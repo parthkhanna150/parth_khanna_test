@@ -6,7 +6,7 @@ greater than “1.1”. Please provide all test cases you could think of.
 """
 
 # given two versions, returns which one is higher
-def compareVersion(v1, v2):
+def compare_version(v1, v2):
 
     # split version strings into arrays
     arr1 = v1.split(".")
@@ -49,13 +49,13 @@ if __name__ == '__main__':
         v1 = input("Enter version 1: ")
         v2 = input("Enter version 2: ")
 
-        result = compareVersion(v1,v2)
+        result = compare_version(v1,v2)
         if result == 0:
             print("Same version numbers!")
         elif result == 1:
-            print(v1," is higher than ",v2)
+            print(v1,"is higher than",v2)
         else:
-            print(v2," is higher than ",v1)
+            print(v1,"is less than",v2)
 
     except Exception as e:
         print(e)
