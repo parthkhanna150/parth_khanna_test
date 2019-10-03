@@ -28,13 +28,13 @@ def compare_version(v1, v2):
     j = i
 
     # check for presence of non-zero numbers in both arrays
-    if i==len(arr2) and i!=len(arr1):
+    if i!=len(arr1):
         while i < len(arr1):
             if int(arr1[i])!=0:
                 return 1
             i+=1
 
-    elif j!=len(arr2) and j==len(arr1):
+    elif j!=len(arr2):
         while j < len(arr2):
             if int(arr2[j])!=0:
                 return -1

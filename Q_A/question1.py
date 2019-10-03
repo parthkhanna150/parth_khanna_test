@@ -4,21 +4,14 @@ Your goal for this question is to write a program that accepts two lines (x1,x2)
 the x-axis and returns whether they overlap. As an example, (1,6) and (8,6) overlaps but not (1,5) and (6,8).
 """
 
-# swaps the numbers to ensure order
-def swap(a,b):
-    t = a
-    a = b
-    b = t
-    return a, b
-
 # checks if two lines overlap
 def are_overlap(x1,x2,x3,x4):
 
-    # make sure the coordinates are ordered
+    # make sure the coordinates are ordered (by swapping)
     if x1>x2:
-        x1, x2 = swap(x1,x2)
+        x1, x2 = x2, x1
     if x3>x4:
-        x3, x4 = swap(x3,x4)
+        x3, x4 = x4, x3
 
     """
     now we just need to check if x2>=x3 and x4>=x1 for an overlap
@@ -37,10 +30,10 @@ if __name__ == '__main__':
 
         # handle exception for when input entered in a wrong format
         try:
-            print("What are the x coordinates of the first line in x1,x2 format?")
+            print("What are the x coordinates of the 1st line in x1,x2 format ( for example: 3,4 ) ?")
             x1, x2 = tuple(int(x.strip()) for x in input().split(','))
 
-            print("What are the x coordinates of the second line in x1,x2 format?")
+            print("What are the x coordinates of the 2nd line in x1,x2 format ( for example: 3,4 ) ?")
             x3, x4 = tuple(int(x.strip()) for x in input().split(','))
 
             result = are_overlap(x1, x2, x3, x4)
